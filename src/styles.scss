@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #d87193; 
+  --color-secondary: #900d39;
+}
+
+.theme-pink {
+  --color-primary: #d87193;
+  --color-secondary: #900d39;
+}
+
+.theme-green {
+  --color-primary: #41611e;
+  --color-secondary: #223f02;
+}
+
+.theme-blue {
+  --color-primary: #17619d;
+  --color-secondary: #0d1626;
+}
+
+.theme-purple {
+  --color-primary: #954ac3;
+  --color-secondary: #4a148c;
+}
+
+.theme-black {
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+}
+
+.theme-orange {
+  --color-primary: #e79317;
+  --color-secondary: #89580f;
+}
+
+.theme-yellow {
+  --color-primary: #d8c730;
+  --color-secondary: #918304;
+}
+
+.theme-brown {
+  --color-primary: #795548;
+  --color-secondary: #3e2723;
+}
+
+.theme-aqua {
+  --color-primary: #00bcd4;
+  --color-secondary: #006064;
+}
+
+.theme-greenyellow {
+  --color-primary: #7cb639;
+  --color-secondary: #466126;
+}
+
+.theme-red {
+  --color-primary: #a61b1b;
+  --color-secondary: #500a0a;
+}
+
+.theme-royalblue {
+  --color-primary: #1e88e5;
+  --color-secondary: #0d47a1;
+}
+
+.theme-mistyrose {
+  --color-primary: #f0b3c9;
+  --color-secondary: #b36a85;
+}
+
+.theme-deeppink {
+  --color-primary: #ff005e;
+  --color-secondary: #4e031f;
+}
+
+.theme-sandybrown {
+  --color-primary: #bf8600;
+  --color-secondary: #5b4000;
+}
+
+.theme-gray {
+  --color-primary: #707070;
+  --color-secondary: #262323;
+}

@@ -1,6 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
+import { CvComponent } from './app/pages/cv/cv';
 import { appConfig } from './app/app.config';
-import { App } from './app/app';
 
-bootstrapApplication(App, appConfig)
+bootstrapApplication(CvComponent, appConfig)
   .catch((err) => console.error(err));

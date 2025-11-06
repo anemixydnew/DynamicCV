@@ -1,0 +1,44 @@
+{
+  "name": "Ximena Wendy Calizaya Perez",
+  "title": "Ing. Sistemas / QA Automation",
+  "phone": "+591 63973977",
+  "city": "Cochabamba, Bolivia - Available for Remote Work",
+  "email": "wendycalizayaperez@gmail.com",
+  "github": "https://github.com/anemixydnew",
+  "linkedin": "https://www.linkedin.com/in/ximena-wendy-calizaya-perez-008291172/",
+  "languages": ["Español (Nativo)", "Inglés (B2+)"],
+  "skills": ["C#", "Selenium", "SpecFlow", "SQL", "Angular"],
+  "description": "Fullstack & QA Automation Engineer with over five years of experience building and testing scalable web applications using .NET Core, React, and modern testing frameworks. Skilled in clean architecture, SOLID principles, and CI/CD automation, with a passion for crafting efficient, user-focused software.\nAs a university lecturer in Compiler Design, Software Quality, and Software Engineering, I combine technical depth with teaching clarity, fostering teamwork and continuous improvement. Known for my proactive mindset, leadership, and interest in AI-assisted development and automation.",
+  "experience": [
+    {
+      "role": "QA Automation",
+      "company": "Empresa X",
+      "years": "2022 - Actual",
+      "tasks": [
+        "Automatización con Selenium",
+        "Creación de pruebas con xUnit y SpecFlow",
+        "Mantenimiento de pipelines DevOps"
+      ]
+    },
+    {
+      "role": "QA Automation",
+      "company": "Empresa X",
+      "years": "2022 - Actual",
+      "tasks": [
+        "Automatización con Selenium",
+        "Creación de pruebas con xUnit y SpecFlow",
+        "Mantenimiento de pipelines DevOps"
+      ]
+    },
+    {
+      "role": "QA Automation",
+      "company": "Empresa X",
+      "years": "2022 - Actual",
+      "tasks": [
+        "Automatización con Selenium",
+        "Creación de pruebas con xUnit y SpecFlow",
+        "Mantenimiento de pipelines DevOps"
+      ]
+    }
+  ]
+}

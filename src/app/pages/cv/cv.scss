@@ -1,0 +1,68 @@
+.cv-container {
+  width: 794px; 
+  min-height: 1000px;
+  border: 1px solid #ccc;
+  display: flex;
+  background: white;
+}
+
+.cv-left {
+  width: 40%;
+  background-color: var(--color-primary);
+}
+
+.cv-right {
+  width: 60%;
+  background: #fff;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 3px;
+}
+
+.section-header {
+  color: var(--color-primary);
+  font-weight: bold;
+  border-left: 6px solid var(--color-primary);
+  padding-left: 6px;
+}
+
+.strong-color{
+  color: var(--color-primary);
+}
+.material-symbols-outlined.color {
+  color: var(--color-secondary);
+  vertical-align: middle;
+}
+
+.link-color {
+  color: var(--color-secondary);
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.style-script-regular {
+  font-family: "Style Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 45px;
+}
+
+.style-script-regular-small {
+  font-family: "Style Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: var(--color-primary);
+}

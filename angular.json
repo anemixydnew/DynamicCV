@@ -26,9 +26,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.scss"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -85,12 +83,13 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.scss"]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "80aca4ef-53ee-4de7-a7df-0bc3df7002a7"
   }
 }
