@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import data from '../../data/user.json';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule, TranslateService, provideTranslateService, TranslateLoader } from '@ngx-translate/core';
+import {
+  TranslateModule,
+  TranslateService,
+  provideTranslateService,
+  TranslateLoader,
+} from '@ngx-translate/core';
 import { TranslateHttpLoader, provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -15,21 +20,22 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   providers: [
     provideTranslateHttpLoader({
       prefix: './assets/i18n/',
-      suffix: '.json'
+      suffix: '.json',
     }),
     provideTranslateService({
       loader: {
         provide: TranslateLoader,
         useClass: TranslateHttpLoader,
-        deps: [HttpClient]
-      }
-    })
-  ]
+        deps: [HttpClient],
+      },
+    }),
+  ],
 })
 export class CvComponent {
   data: any = data;
   currentTheme: string = 'theme-pink';
   selectedLang: string = 'es';
+  @ViewChild('cvContainer') cvContainer!: ElementRef;
 
   constructor(private translate: TranslateService) {
     this.selectedLang = 'es';
@@ -41,12 +47,20 @@ export class CvComponent {
     document.documentElement.className = theme;
   }
 
-  async exportPDF() {
-  }
-
   changeLanguage() {
     this.translate.use(this.selectedLang).subscribe(() => {
       console.log('Language selected is:', this.selectedLang);
     });
+  }
+
+  getProgressStyle(level: number) {
+    const deg = (level / 100) * 360;
+    return {
+      background: `conic-gradient(var(--color-secondary) ${deg}deg, #e6e6e6 ${deg}deg)`,
+    };
+  }
+
+  printDocument() {
+    window.print();
   }
 }

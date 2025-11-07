@@ -1,59 +1,130 @@
-<div id="cv" class="cv-container d-flex">
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Luxurious+Script&family=Meow+Script&family=Rouge+Script&family=Style+Script&display=swap"
-    rel="stylesheet"
-  />
+<div id="contentToPrint" class="printable-area">
+  <div id="cv" class="cv-container d-flex">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Luxurious+Script&family=Meow+Script&family=Rouge+Script&family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
 
-  <div class="cv-left p-4 text-white">
-    <div class="text-center mb-4">
-      <img
-        [src]="'assets/' + currentTheme.replace('theme-', '') + '.jpg'"
-        class="profile-img"
-        alt="foto"
-      />
-      <h1 class="style-script-regular">{{ data.name }}</h1>
-      <h5>{{ data.title }}</h5>
+    <div class="cv-left p-4 text-white">
+      <div class="text-center mb-4">
+        <img
+          [src]="'assets/' + currentTheme.replace('theme-', '') + '.jpg'"
+          class="profile-img"
+          alt="foto"
+        />
+        <h1 class="style-script-regular">{{ data.name }}</h1>
+        <h5 class="data-title">{{ data.title }}</h5>
+      </div>
+      <h5 class="section-title">{{ 'CONTACT' | translate }}</h5>
+      <div class="contact-list-container">
+        <div class="contact-item">
+          <span class="material-symbols-outlined contact-icon"> contact_phone </span>
+          <span class="size">{{ data.phone }}</span>
+        </div>
+
+        <div class="contact-item">
+          <span class="material-symbols-outlined contact-icon"> mail </span>
+          <span class="size">{{ data.email }}</span>
+        </div>
+
+        <div class="contact-item">
+          <span class="material-symbols-outlined contact-icon"> location_on </span>
+          <span class="size">{{ data.city }}</span>
+        </div>
+
+        <div class="contact-item">
+          <span class="material-symbols-outlined contact-icon"> fork_right </span>
+          <a [href]="data.github" class="link-color size" target="_blank">{{ data.github }}</a>
+        </div>
+
+        <div class="contact-item">
+          <span class="material-symbols-outlined contact-icon"> link </span>
+          <a [href]="data.linkedin" class="link-color size" target="_blank">{{ data.linkedin }}</a>
+        </div>
+      </div>
+
+      <h5 class="section-title">{{ 'SKILLS' | translate }}</h5>
+
+      <div class="skills-container">
+        <div *ngFor="let skill of data.skills" class="skill-item">
+          <span class="skill-name size">{{ skill.name }}</span>
+
+          <div class="circular-progress" [style]="getProgressStyle(skill.level)">
+            <span class="percentage">{{ skill.level }}%</span>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="section-title">{{ 'LANGUAGES' | translate }}</h5>
+
+      <div *ngFor="let lang of data.languages" class="language-item">
+        <span class="lang-name size">{{ lang.language }}</span>
+
+        <span class="stars">
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+            <span class="star" [class.filled]="i < lang.level">★</span>
+          </ng-container>
+        </span>
+      </div>
     </div>
-    <h5 class="section-title">{{ 'CONTACT' | translate }}</h5>
-    <p><span class="material-symbols-outlined color"> contact_phone </span> {{ data.phone }}</p>
-    <p><span class="material-symbols-outlined color"> mail </span> {{ data.email }}</p>
-    <p><span class="material-symbols-outlined color"> location_on </span> {{ data.city }}</p>
-    <p>
-      <span class="material-symbols-outlined color"> fork_right </span>
-      <a class="link-color" [href]="data.github" target="_blank">{{ data.github }}</a>
-    </p>
-    <p>
-      <span class="material-symbols-outlined color"> link </span>
-      <a class="link-color" [href]="data.linkedin" target="_blank">{{ data.linkedin }}</a>
-    </p>
-    <h5 class="section-title">{{ 'SKILLS' | translate }}</h5>
-    <ul>
-      <li *ngFor="let skill of data.skills">{{ skill }}</li>
-    </ul>
 
-    <h5 class="section-title">{{ 'LANGUAGES' | translate }}</h5>
-    <ul>
-      <li *ngFor="let lang of data.languages">{{ lang }}</li>
-    </ul>
-  </div>
-
-  <div class="cv-right p-4">
-    <h4 class="section-header">{{ 'PROFESSIONAL_SUMMARY' | translate }}</h4>
-    <p>{{ data.description }}</p>
-    <h4 class="section-header mt-4">{{ 'EXPERIENCE' | translate }}</h4>
-    <div *ngFor="let exp of data.experience" class="mb-3">
-      <strong class="strong-color">{{ exp.role }}</strong>
-      - {{ exp.company }}
-      <h6 class="style-script-regular-small">{{ exp.years }}</h6>
-      <ul>
-        <li *ngFor="let t of exp.tasks">{{ t }}</li>
-      </ul>
+    <div class="cv-right p-4">
+      <h4 class="section-header section-title-right">{{ 'PROFESSIONAL_SUMMARY' | translate }}</h4>
+      <p class="size">{{ data.description }}</p>
+      <h4 class="section-header section-title-right mt-4">{{ 'EXPERIENCE' | translate }}</h4>
+      <div class="type-container">
+        <div *ngFor="let exp of data.experience" class="achievement-item mb-3">
+          <strong class="strong-color size">{{ exp.role }}</strong>
+          <span class="size">- {{ exp.company }}</span>
+          <h6 class="style-script-regular-small">{{ exp.years }}</h6>
+          <ul class="ul">
+            <li *ngFor="let t of exp.tasks" class="size">{{ t }}</li>
+          </ul>
+        </div>
+      </div>
+      <h4 class="section-header section-title-right mt-4">{{ 'EDUCATION' | translate }}</h4>
+      <div class="type-container">
+        <div *ngFor="let education of data.education" class="achievement-item education-row mb-3">
+          <div class="left-col">
+            <strong class="strong-color size">{{ education.degree }}</strong>
+            <span class="size">{{ education.years }}</span>
+          </div>
+          <div class="right-col">
+            <span class="size">{{ education.institution }}</span>
+            <span class="style-script-regular-small">{{ education.location }}</span>
+          </div>
+        </div>
+      </div>
+      <h4 class="section-header section-title-right mt-4">{{ 'ACHIEVEMENTS' | translate }}</h4>
+      <div class="type-container">
+        <div *ngFor="let achievement of data.achievements" class="achievement-item mb-3">
+          <strong class="strong-color d-block size">{{ achievement.title }}</strong>
+          <span class="size">{{ achievement.company }}</span>
+          <span class="style-script-regular-small"> ({{ achievement.year }})</span>
+        </div>
+      </div>
+      <h4 class="section-header section-title-right mt-4">{{ 'CERTIFICATIONS' | translate }}</h4>
+      <div class="type-container">
+        <div
+          *ngFor="let cert of data.certifications"
+          class="achievement-item certification-row mb-3"
+        >
+          <div class="left-col-certification">
+            <strong class="strong-color">{{ cert.year }}</strong>
+            <span class="size">{{ cert.hours }}</span>
+          </div>
+          <div class="right-col-certification">
+            <span class="size">{{ cert.name }}</span>
+            <span class="style-script-regular-small">{{ cert.issuer }}</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -73,9 +144,9 @@
 <button (click)="changeTheme('theme-deeppink')">rosa intenso</button>
 <button (click)="changeTheme('theme-sandybrown')">marrón claro</button>
 <button (click)="changeTheme('theme-gray')">gris</button>
-   
+
 <select [(ngModel)]="selectedLang" (ngModelChange)="changeLanguage()">
   <option value="es">Español</option>
   <option value="en">English</option>
 </select>
-<button class="btn btn-primary mt-4" (click)="exportPDF()">Descargar PDF</button>
+<button (click)="printDocument()">Generar PDF/Imprimir</button>

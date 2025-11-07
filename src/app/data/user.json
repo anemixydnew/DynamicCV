@@ -6,39 +6,145 @@
   "email": "wendycalizayaperez@gmail.com",
   "github": "https://github.com/anemixydnew",
   "linkedin": "https://www.linkedin.com/in/ximena-wendy-calizaya-perez-008291172/",
-  "languages": ["Español (Nativo)", "Inglés (B2+)"],
-  "skills": ["C#", "Selenium", "SpecFlow", "SQL", "Angular"],
   "description": "Fullstack & QA Automation Engineer with over five years of experience building and testing scalable web applications using .NET Core, React, and modern testing frameworks. Skilled in clean architecture, SOLID principles, and CI/CD automation, with a passion for crafting efficient, user-focused software.\nAs a university lecturer in Compiler Design, Software Quality, and Software Engineering, I combine technical depth with teaching clarity, fostering teamwork and continuous improvement. Known for my proactive mindset, leadership, and interest in AI-assisted development and automation.",
+  "languages": [
+    {
+      "language": "Spanish",
+      "level": 5
+    },
+    {
+      "language": "English",
+      "level": 4
+    },
+    {
+      "language": "Korean",
+      "level": 1
+    }
+  ],
+  "skills": [
+    { "name": "C#", "level": 90 },
+    { "name": "ASP.NET / .NET Core", "level": 85 },
+    { "name": "Entity Framework", "level": 85 },
+    { "name": "SQL Server", "level": 80 },
+    { "name": "React.js", "level": 80 },
+    { "name": "Angular", "level": 70 },
+    { "name": "JavaScript / TypeScript", "level": 80 },
+    { "name": "PostgreSQL / MySQL / MariaDB / MongoDB", "level": 75 },
+    { "name": "Git / GitHub / GitLab / Azure DevOps", "level": 85 },
+    { "name": "Docker", "level": 60 },
+    { "name": "Unit Testing (Jest, NUnit, XUnit)", "level": 85 },
+    { "name": "Automation Testing (Selenium, Gherkin, SpecFlow)", "level": 75 },
+    { "name": "Clean Architecture / SOLID / Design Patterns", "level": 90 }
+  ],
   "experience": [
     {
-      "role": "QA Automation",
-      "company": "Empresa X",
-      "years": "2022 - Actual",
+      "role": "Professor of Software Engineering, Compilers, Programming Workshop, Algorithms",
+      "company": "Universidad Adventista de Bolivia (UAB)",
+      "years": "02/01/2023 - 02/01/2025",
       "tasks": [
-        "Automatización con Selenium",
-        "Creación de pruebas con xUnit y SpecFlow",
-        "Mantenimiento de pipelines DevOps"
+        "Instructor and evaluator in multiple software engineering subjects.",
+        "Guided students in ICPC competitive programming training.",
+        "Reviewed and mentored academic thesis projects.",
+        "Designed learning projects applying real-world software principles."
       ]
     },
     {
-      "role": "QA Automation",
-      "company": "Empresa X",
-      "years": "2022 - Actual",
+      "role": "Independent Software Developer (Freelancer)",
+      "company": "Freelance",
+      "years": "02/01/2023 - 02/01/2025",
       "tasks": [
-        "Automatización con Selenium",
-        "Creación de pruebas con xUnit y SpecFlow",
-        "Mantenimiento de pipelines DevOps"
+        "Developed API services and frontend interfaces using C#, React and SQL Server.",
+        "Implemented Clean Architecture, Redux and SignalR for real-time communication.",
+        "Created unit and integration tests for backend and frontend.",
+        "Integrated authentication using Azure B2C."
       ]
     },
     {
-      "role": "QA Automation",
-      "company": "Empresa X",
-      "years": "2022 - Actual",
+      "role": "Full Stack Developer",
+      "company": "Jalasoft",
+      "years": "07/01/2022 - 09/01/2022",
       "tasks": [
-        "Automatización con Selenium",
-        "Creación de pruebas con xUnit y SpecFlow",
-        "Mantenimiento de pipelines DevOps"
+        "Developed backend logic using C#, LINQ and Entity Framework with MongoDB.",
+        "Implemented frontend features with React and Semantic UI.",
+        "Wrote unit tests using Jest and NUnit."
       ]
+    },
+    {
+      "role": "Full Stack Developer",
+      "company": "Jala Foundation",
+      "years": "11/01/2021 - 06/01/2022",
+      "tasks": [
+        "Created backend REST APIs using .NET Core and SQL Server.",
+        "Implemented authentication using JWT and Azure DevOps pipelines.",
+        "Automated tests using Selenium and SpecFlow.",
+        "Collaborated with multidisciplinary teams under Scrum."
+      ]
+    },
+    {
+      "role": "Backend Developer (Unity 3D Game)",
+      "company": "Usyit",
+      "years": "01/01/2021 - 04/01/2021",
+      "tasks": [
+        "Developed multiplayer and server-side logic using C# and PlayFab.",
+        "Implemented real-time communication and ranking statistics."
+      ]
+    },
+    {
+      "role": "Backend Developer",
+      "company": "Bolivian Academy of Military History",
+      "years": "04/01/2020 - 09/01/2020",
+      "tasks": [
+        "Managed and maintained the central library database.",
+        "Performed data validation and process optimization."
+      ]
+    },
+    {
+      "role": "Full Stack Developer",
+      "company": "UTIC - EMI",
+      "years": "03/01/2020 - 05/01/2020",
+      "tasks": [
+        "Developed backend in .NET with MariaDB.",
+        "Built dynamic forms using HTML, CSS, TypeScript and jQuery."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Systems Engineering",
+      "institution": "Military School of Engineering (EMI)",
+      "years": "01/01/2015 - 01/01/2020",
+      "location": "Cochabamba, Bolivia"
+    },
+    {
+      "degree": "Diploma in Higher Education",
+      "institution": "Bolivian Adventist University (UAB)",
+      "years": "01/01/2023 - 12/01/2023",
+      "location": "Cochabamba, Bolivia"
+    }
+  ],
+  "achievements": [
+    { "title": "South American ICPC Competitor", "company": "EMI", "year": "2015-2017" },
+    { "title": "1st Place CTF (Advanced Category)", "company": "Agetic", "year": "2019" },
+    {
+      "title": "Cybersecurity / Programming Conferences Participation",
+      "company": "EMI - AGETIC - INCIBE",
+      "year": "2016-2023"
+    }
+  ],
+  "certifications": [
+    { "name": "Scrum Foundation Certification", "issuer": "BigAgile", "year": "2020", "hours": "" },
+    { "name": "Cybersecurity in Teleworking", "issuer": "INCIBE", "year": "2021", "hours": "" },
+    {
+      "name": "Conversational English Skills",
+      "issuer": "Tsinghua University",
+      "year": "2022",
+      "hours": ""
+    },
+    {
+      "name": "Mobile App Development Course",
+      "issuer": "Complutense University of Madrid",
+      "year": "2023",
+      "hours": ""
     }
   ]
 }
