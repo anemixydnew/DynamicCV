@@ -19,7 +19,7 @@
           alt="foto"
         />
         <h1 class="style-script-regular">{{ data.name }}</h1>
-        <h5 class="data-title">{{ data.title }}</h5>
+        <h5 class="data-title">{{ data.title[translate.currentLang] }}</h5>
       </div>
       <h5 class="section-title">{{ 'CONTACT' | translate }}</h5>
       <div class="contact-list-container">
@@ -35,7 +35,7 @@
 
         <div class="contact-item">
           <span class="material-symbols-outlined contact-icon"> location_on </span>
-          <span class="size">{{ data.city }}</span>
+          <span class="size">{{ data.city[translate.currentLang] }}</span>
         </div>
 
         <div class="contact-item">
@@ -50,7 +50,6 @@
       </div>
 
       <h5 class="section-title">{{ 'SKILLS' | translate }}</h5>
-
       <div class="skills-container">
         <div *ngFor="let skill of data.skills" class="skill-item">
           <span class="skill-name size">{{ skill.name }}</span>
@@ -62,9 +61,8 @@
       </div>
 
       <h5 class="section-title">{{ 'LANGUAGES' | translate }}</h5>
-
       <div *ngFor="let lang of data.languages" class="language-item">
-        <span class="lang-name size">{{ lang.language }}</span>
+        <span class="lang-name size">{{ lang.language[translate.currentLang] }}</span>
 
         <span class="stars">
           <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
@@ -76,15 +74,15 @@
 
     <div class="cv-right p-4">
       <h4 class="section-header section-title-right">{{ 'PROFESSIONAL_SUMMARY' | translate }}</h4>
-      <p class="size">{{ data.description }}</p>
+      <p class="size">{{ data.description[translate.currentLang] }}</p>
       <h4 class="section-header section-title-right mt-4">{{ 'EXPERIENCE' | translate }}</h4>
       <div class="type-container">
         <div *ngFor="let exp of data.experience" class="achievement-item mb-3">
-          <strong class="strong-color size">{{ exp.role }}</strong>
-          <span class="size">- {{ exp.company }}</span>
-          <h6 class="style-script-regular-small">{{ exp.years }}</h6>
+          <strong class="strong-color size">{{ exp.role[translate.currentLang] }}</strong>
+          <span class="size">- {{ exp.company[translate.currentLang] }}</span>
+          <h6 class="style-script-regular-small">{{ exp.years[translate.currentLang] }}</h6>
           <ul class="ul">
-            <li *ngFor="let t of exp.tasks" class="size">{{ t }}</li>
+            <li *ngFor="let t of exp.tasks[translate.currentLang]" class="size">{{ t }}</li>
           </ul>
         </div>
       </div>
@@ -92,21 +90,25 @@
       <div class="type-container">
         <div *ngFor="let education of data.education" class="achievement-item education-row mb-3">
           <div class="left-col">
-            <strong class="strong-color size">{{ education.degree }}</strong>
-            <span class="size">{{ education.years }}</span>
+            <strong class="strong-color size">{{ education.degree[translate.currentLang] }}</strong>
+            <span class="size">{{ education.years[translate.currentLang] }}</span>
           </div>
           <div class="right-col">
-            <span class="size">{{ education.institution }}</span>
-            <span class="style-script-regular-small">{{ education.location }}</span>
+            <span class="size">{{ education.institution[translate.currentLang] }}</span>
+            <span class="style-script-regular-small">{{
+              education.location[translate.currentLang]
+            }}</span>
           </div>
         </div>
       </div>
       <h4 class="section-header section-title-right mt-4">{{ 'ACHIEVEMENTS' | translate }}</h4>
       <div class="type-container">
         <div *ngFor="let achievement of data.achievements" class="achievement-item mb-3">
-          <strong class="strong-color d-block size">{{ achievement.title }}</strong>
-          <span class="size">{{ achievement.company }}</span>
-          <span class="style-script-regular-small"> ({{ achievement.year }})</span>
+          <strong class="strong-color d-block size">{{
+            achievement.title[translate.currentLang]
+          }}</strong>
+          <span class="size">{{ achievement.company[translate.currentLang] }}</span>
+          <span class="style-script-regular-small"> ({{ achievement.year[translate.currentLang] }})</span>
         </div>
       </div>
       <h4 class="section-header section-title-right mt-4">{{ 'CERTIFICATIONS' | translate }}</h4>
@@ -116,12 +118,12 @@
           class="achievement-item certification-row mb-3"
         >
           <div class="left-col-certification">
-            <strong class="strong-color">{{ cert.year }}</strong>
-            <span class="size">{{ cert.hours }}</span>
+            <strong class="strong-color">{{ cert.year[translate.currentLang] }}</strong>
+            <span class="size">{{ cert.hours[translate.currentLang] }}</span>
           </div>
           <div class="right-col-certification">
-            <span class="size">{{ cert.name }}</span>
-            <span class="style-script-regular-small">{{ cert.issuer }}</span>
+            <span class="size">{{ cert.name[translate.currentLang]  }}</span>
+            <span class="style-script-regular-small">{{ cert.issuer[translate.currentLang]  }}</span>
           </div>
         </div>
       </div>

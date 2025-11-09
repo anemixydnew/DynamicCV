@@ -11,6 +11,11 @@ import {
 import { TranslateHttpLoader, provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+interface DatedItem {
+  year?: Record<string, string>;
+  years?: Record<string, string>;
+}
+
 @Component({
   selector: 'app-cv',
   standalone: true,
@@ -37,9 +42,29 @@ export class CvComponent {
   selectedLang: string = 'es';
   @ViewChild('cvContainer') cvContainer!: ElementRef;
 
-  constructor(private translate: TranslateService) {
+  constructor(public translate: TranslateService) {
     this.selectedLang = 'es';
     this.translate.use(this.selectedLang);
+    this.sortDataByDate(this.data.certifications, 'es', 'year');
+    this.sortDataByDate(this.data.experience, 'es', 'years');
+    this.sortDataByDate(this.data.education, 'es', 'years');
+    this.sortDataByDate(this.data.achievements, 'es', 'year');
+    this.sortSkills();
+  }
+
+  parseDate(dateStr: string, lang: string): Date {
+    if (dateStr.includes('-')) {
+      dateStr = dateStr.split('-')[1].trim();
+    }
+
+    if (!dateStr) return new Date(0);
+    let parts = dateStr.split('/');
+
+    if (lang === 'es') {
+      return new Date(+parts[2], +parts[1] - 1, +parts[0]);
+    } else {
+      return new Date(+parts[2], +parts[0] - 1, +parts[1]);
+    }
   }
 
   changeTheme(theme: string) {
@@ -49,7 +74,30 @@ export class CvComponent {
 
   changeLanguage() {
     this.translate.use(this.selectedLang).subscribe(() => {
-      console.log('Language selected is:', this.selectedLang);
+      this.sortDataByDate(this.data.certifications, this.selectedLang, 'year');
+      this.sortDataByDate(this.data.experience, this.selectedLang, 'years');
+      this.sortDataByDate(this.data.education, this.selectedLang, 'years');
+      this.sortDataByDate(this.data.achievements, this.selectedLang, 'year');
+    });
+  }
+
+  private sortDataByDate(list: DatedItem[], lang: string, datePropName: keyof DatedItem) {
+    if (!list) return;
+
+    list.sort((a: DatedItem, b: DatedItem) => {
+      const dateStringA = (a[datePropName] as Record<string, string>)?.[lang];
+      const dateStringB = (b[datePropName] as Record<string, string>)?.[lang];
+
+      const dateA = this.parseDate(dateStringA, lang);
+      const dateB = this.parseDate(dateStringB, lang);
+
+      return dateB.getTime() - dateA.getTime();
+    });
+  }
+
+  sortSkills() {
+    this.data.skills.sort((a: any, b: any) => {
+      return b.level - a.level;
     });
   }
 

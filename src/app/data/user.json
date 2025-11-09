@@ -1,150 +1,643 @@
 {
   "name": "Ximena Wendy Calizaya Perez",
-  "title": "Ing. Sistemas / QA Automation",
+  "title": { "es": "Ing. Sistemas / QA Automation", "en": "Systems Engineer / QA Automation" },
   "phone": "+591 63973977",
-  "city": "Cochabamba, Bolivia - Available for Remote Work",
+  "city": {
+    "es": "Cochabamba, Bolivia - Disponible para trabajo remoto",
+    "en": "Cochabamba, Bolivia - Available for Remote Work"
+  },
   "email": "wendycalizayaperez@gmail.com",
   "github": "https://github.com/anemixydnew",
   "linkedin": "https://www.linkedin.com/in/ximena-wendy-calizaya-perez-008291172/",
-  "description": "Fullstack & QA Automation Engineer with over five years of experience building and testing scalable web applications using .NET Core, React, and modern testing frameworks. Skilled in clean architecture, SOLID principles, and CI/CD automation, with a passion for crafting efficient, user-focused software.\nAs a university lecturer in Compiler Design, Software Quality, and Software Engineering, I combine technical depth with teaching clarity, fostering teamwork and continuous improvement. Known for my proactive mindset, leadership, and interest in AI-assisted development and automation.",
+  "description": {
+    "es": "Ingeniera Fullstack y QA Automation con más de cinco años de experiencia construyendo y probando aplicaciones web escalables utilizando .NET Core, React y frameworks modernos de pruebas. Experta en arquitectura limpia, principios SOLID y automatización CI/CD, con pasión por crear software eficiente y centrado en el usuario.\nComo docente universitaria en Diseño de Compiladores, Calidad de Software e Ingeniería de Software, combino profundidad técnica con claridad pedagógica, fomentando el trabajo en equipo y la mejora continua. Reconocida por mi mentalidad proactiva, liderazgo e interés en el desarrollo y automatización asistidos por IA.",
+    "en": "Fullstack & QA Automation Engineer with over five years of experience building and testing scalable web applications using .NET Core, React, and modern testing frameworks. Skilled in clean architecture, SOLID principles, and CI/CD automation, with a passion for crafting efficient, user-focused software.\nAs a university lecturer in Compiler Design, Software Quality, and Software Engineering, I combine technical depth with teaching clarity, fostering teamwork and continuous improvement. Known for my proactive mindset, leadership, and interest in AI-assisted development and automation."
+  },
   "languages": [
-    {
-      "language": "Spanish",
-      "level": 5
-    },
-    {
-      "language": "English",
-      "level": 4
-    },
-    {
-      "language": "Korean",
-      "level": 1
-    }
+    { "language": { "es": "Español", "en": "Spanish" }, "level": 5 },
+    { "language": { "es": "Inglés", "en": "English" }, "level": 4 },
+    { "language": { "es": "Coreano", "en": "Korean" }, "level": 1 }
   ],
   "skills": [
+    { "name": "NuGet Packaging", "level": 60 },
+    { "name": "Postman", "level": 80 },
+    { "name": "Selenium IDE", "level": 80 },
+    { "name": "Selenium WebDriver", "level": 80 },
+    { "name": "Jasmine", "level": 40 },
+    { "name": "Jest", "level": 60 },
+    { "name": "NUnit", "level": 70 },
+    { "name": "XUnit", "level": 70 },
+    { "name": "SpecFlow / Gherkin", "level": 70 },
+    { "name": "MongoDB", "level": 30 },
+    { "name": "SQLite", "level": 80 },
+    { "name": "MariaDB", "level": 80 },
+    { "name": "SQL Server", "level": 85 },
+    { "name": "MySQL", "level": 85 },
+    { "name": "PostgreSQL", "level": 90 },
+    { "name": "Autocad", "level": 50 },
+    { "name": "Autocad Plant 3D", "level": 50 },
+    { "name": "Angular", "level": 60 },
+    { "name": "Node.js", "level": 70 },
+    { "name": "Unity 3D", "level": 80 },
+    { "name": ".NET", "level": 80 },
+    { "name": ".NET Core", "level": 80 },
+    { "name": "Redis", "level": 80 },
+    { "name": "Redux", "level": 80 },
+    { "name": "SignalR", "level": 80 },
+    { "name": "Entity Framework", "level": 80 },
+    { "name": "Bitbucket", "level": 80 },
+    { "name": "SourceTree", "level": 80 },
+    { "name": "GitLab", "level": 85 },
+    { "name": "Git / GitHub", "level": 90 },
+    { "name": "TestLink", "level": 10 },
+    { "name": "Azure B2C", "level": 30 },
+    { "name": "Trello", "level": 90 },
+    { "name": "Jira", "level": 90 },
+    { "name": "Integration test", "level": 50 },
+    { "name": "API testing", "level": 70 },
+    { "name": "Unit test", "level": 90 },
+    { "name": "Docker", "level": 10 },
+    { "name": "Arduino", "level": 40 },
+    { "name": "Linux", "level": 50 },
+    { "name": "PyCharm", "level": 30 },
+    { "name": "NetBeans", "level": 40 },
+    { "name": "Heroku", "level": 80 },
+    { "name": "Sublime text", "level": 80 },
+    { "name": "Visual Studio", "level": 90 },
+    { "name": "Visual Code", "level": 90 },
+    { "name": "Windows", "level": 90 },
+    { "name": "Teams", "level": 90 },
+    { "name": "Zoom", "level": 90 },
+    { "name": "Meet", "level": 90 },
+    { "name": "Confluence", "level": 90 },
+    { "name": "Swagger", "level": 90 },
+    { "name": "Curl", "level": 90 },
+    { "name": "Express", "level": 10 },
+    { "name": "Johnny five", "level": 10 },
+    { "name": "jQuery", "level": 30 },
+    { "name": "React", "level": 90 },
+    { "name": "Velocity", "level": 70 },
+    { "name": "Jinja", "level": 70 },
+    { "name": "JointJS", "level": 90 },
+    { "name": "ASP.NET", "level": 90 },
+    { "name": "ASP.NET Core", "level": 90 },
+    { "name": "Yii", "level": 70 },
+    { "name": "C", "level": 30 },
+    { "name": "C++", "level": 80 },
+    { "name": "TypeScript", "level": 60 },
+    { "name": "JavaScript", "level": 60 },
+    { "name": "Java", "level": 30 },
+    { "name": "PHP", "level": 80 },
+    { "name": "Python", "level": 80 },
     { "name": "C#", "level": 90 },
-    { "name": "ASP.NET / .NET Core", "level": 85 },
-    { "name": "Entity Framework", "level": 85 },
-    { "name": "SQL Server", "level": 80 },
-    { "name": "React.js", "level": 80 },
-    { "name": "Angular", "level": 70 },
-    { "name": "JavaScript / TypeScript", "level": 80 },
-    { "name": "PostgreSQL / MySQL / MariaDB / MongoDB", "level": 75 },
-    { "name": "Git / GitHub / GitLab / Azure DevOps", "level": 85 },
-    { "name": "Docker", "level": 60 },
-    { "name": "Unit Testing (Jest, NUnit, XUnit)", "level": 85 },
-    { "name": "Automation Testing (Selenium, Gherkin, SpecFlow)", "level": 75 },
-    { "name": "Clean Architecture / SOLID / Design Patterns", "level": 90 }
+    { "name": "HTML / CSS / SCSS", "level": 80 },
+    { "name": "Bootstrap", "level": 85 },
+    { "name": "Basic Authentication", "level": 80 },
+    { "name": "JWT Authentication", "level": 80 },
+    { "name": "OAuth", "level": 70 },
+    { "name": "API Key", "level": 70 },
+    { "name": "Apache", "level": 30 },
+    { "name": "IIS", "level": 70 },
+    { "name": "Power BI", "level": 30 },
+    { "name": "Azure DevOps", "level": 50 },
+    { "name": "Figma", "level": 75 }
   ],
   "experience": [
     {
-      "role": "Professor of Software Engineering, Compilers, Programming Workshop, Algorithms",
-      "company": "Universidad Adventista de Bolivia (UAB)",
-      "years": "02/01/2023 - 02/01/2025",
-      "tasks": [
-        "Instructor and evaluator in multiple software engineering subjects.",
-        "Guided students in ICPC competitive programming training.",
-        "Reviewed and mentored academic thesis projects.",
-        "Designed learning projects applying real-world software principles."
-      ]
+      "role": {
+        "es": "Docente Universitaria de Ingeniería de Sistemas",
+        "en": "University Lecturer of Systems Engineering"
+      },
+      "company": {
+        "es": "Universidad Adventista de Bolivia (UAB)",
+        "en": "Adventist University of Bolivia (UAB)"
+      },
+      "years": { "es": "01/02/2023 - Actualmente", "en": "02/01/2023 - Currently" },
+      "tasks": {
+        "es": [
+          "Impartí cursos de Análisis de Algoritmos, Calidad de Software, Diseño de Compiladores e Ingeniería de Software.",
+          "Entrené equipos para competencias de programación ICPC, enfocándome en optimización de algoritmos y tiempos de compilación.",
+          "Evalué y asesoré proyectos de grado (pregrado y postgrado), utilizando metodologías ágiles y control de versiones con GitHub.",
+          "Diseñé estrategias de enseñanza basadas en competencias, utilizando herramientas como Trello para gestión de proyectos de estudiantes.",
+          "Supervisé pruebas unitarias, de integración y automatización (Selenium) en proyectos académicos, garantizando la calidad del software."
+        ],
+        "en": [
+          "Taught courses in Algorithm Analysis, Software Quality, Compiler Design, and Software Engineering.",
+          "Trained teams for ICPC programming competitions, focusing on algorithm optimization and compilation times.",
+          "Evaluated and supervised undergraduate and graduate thesis projects, applying agile methodologies and GitHub for version control.",
+          "Designed competency-based teaching strategies, using tools like Trello for student project management.",
+          "Oversaw unit, integration, and automation testing (Selenium) in academic projects to ensure software quality."
+        ]
+      }
     },
     {
-      "role": "Independent Software Developer (Freelancer)",
-      "company": "Freelance",
-      "years": "02/01/2023 - 02/01/2025",
-      "tasks": [
-        "Developed API services and frontend interfaces using C#, React and SQL Server.",
-        "Implemented Clean Architecture, Redux and SignalR for real-time communication.",
-        "Created unit and integration tests for backend and frontend.",
-        "Integrated authentication using Azure B2C."
-      ]
+      "role": {
+        "es": "Desarrolladora Full Stack Freelance",
+        "en": "Freelance Full Stack Developer"
+      },
+      "company": { "es": "Digital Innovations", "en": "Digital Innovations" },
+      "years": { "es": "01/02/2023 - Actualmente", "en": "02/01/2023 - Currently" },
+      "tasks": {
+        "es": [
+          "Desarrollé APIs RESTful robustas con .NET Core y Entity Framework, aplicando principios SOLID y Clean Architecture.",
+          "Implementé interfaces de usuario dinámicas y escalables usando React.js, Redux, Material UI y JointJS.",
+          "Diseñé y gestioné bases de datos SQL Server y SQLite, optimizando el rendimiento y asegurando la integridad de los datos.",
+          "Integré la autenticación de usuarios mediante Azure B2C y gestioné la seguridad con tokens JWT.",
+          "Implementé comunicación en tiempo real utilizando SignalR y gestioné datos en caché con Redis para mejorar la latencia.",
+          "Aseguré la calidad del código mediante pruebas unitarias (Jasmine, Jest, MS Test) y automatización de pruebas (Selenium, Specflow, Gherkin).",
+          "Utilicé metodologías Scrum con Jira para la gestión de proyectos y GitHub/Azure DevOps para CI/CD."
+        ],
+        "en": [
+          "Developed robust RESTful APIs using .NET Core and Entity Framework, applying SOLID principles and Clean Architecture.",
+          "Implemented dynamic and scalable user interfaces with React.js, Redux, Material UI, and JointJS.",
+          "Designed and managed SQL Server and SQLite databases, optimizing performance and ensuring data integrity.",
+          "Integrated user authentication via Azure B2C and managed security with JWT tokens.",
+          "Implemented real-time communication using SignalR and managed cached data with Redis to improve latency.",
+          "Ensured code quality through unit testing (Jasmine, Jest, MS Test) and test automation (Selenium, Specflow, Gherkin).",
+          "Utilized Scrum methodology with Jira for project management and GitHub/Azure DevOps for CI/CD pipelines."
+        ]
+      }
     },
     {
-      "role": "Full Stack Developer",
-      "company": "Jalasoft",
-      "years": "07/01/2022 - 09/01/2022",
-      "tasks": [
-        "Developed backend logic using C#, LINQ and Entity Framework with MongoDB.",
-        "Implemented frontend features with React and Semantic UI.",
-        "Wrote unit tests using Jest and NUnit."
-      ]
+      "role": { "es": "Full Stack Developer", "en": "Full Stack Developer" },
+      "company": { "es": "Jalasoft", "en": "Jalasoft" },
+      "years": { "es": "01/07/2022 - 01/09/2022", "en": "07/01/2022 - 09/01/2022" },
+      "tasks": {
+        "es": [
+          "Desarrollé backend utilizando C#, LINQ y Entity Framework para la conexión a bases de datos MongoDB, siguiendo principios POO y SOLID.",
+          "Implementé frontend con React.js y Semantic UI, asegurando una experiencia de usuario fluida.",
+          "Realicé pruebas unitarias exhaustivas utilizando Jest (frontend) y NUnit (backend).",
+          "Gestioné el control de versiones y el flujo de trabajo del proyecto mediante GitLab y la herramienta de gestión Portuel."
+        ],
+        "en": [
+          "Developed backend using C#, LINQ, and Entity Framework for MongoDB database connections, applying OOP and SOLID principles.",
+          "Implemented frontend with React.js and Semantic UI, ensuring a smooth user experience.",
+          "Conducted exhaustive unit testing using Jest (frontend) and NUnit (backend).",
+          "Managed version control and project workflow using GitLab and the Portuel management tool."
+        ]
+      }
     },
     {
-      "role": "Full Stack Developer",
-      "company": "Jala Foundation",
-      "years": "11/01/2021 - 06/01/2022",
-      "tasks": [
-        "Created backend REST APIs using .NET Core and SQL Server.",
-        "Implemented authentication using JWT and Azure DevOps pipelines.",
-        "Automated tests using Selenium and SpecFlow.",
-        "Collaborated with multidisciplinary teams under Scrum."
-      ]
+      "role": { "es": "Full Stack Developer", "en": "Full Stack Developer" },
+      "company": { "es": "Jala Foundation", "en": "Jala Foundation" },
+      "years": { "es": "01/11/2021 - 01/06/2022", "en": "11/01/2021 - 06/01/2022" },
+      "tasks": {
+        "es": [
+          "Desarrollé APIs REST en .NET Core y ASP.NET, integrando bases de datos SQL Server y SQLite con Entity Framework.",
+          "Implementé interfaces de usuario utilizando React, Semantic UI y Material UI.",
+          "Integré autenticación JWT y configuré pipelines de CI/CD en Azure DevOps para despliegue automatizado.",
+          "Realicé automatización de pruebas (Selenium WebDriver, SpecFlow) y pruebas funcionales/de aceptación.",
+          "Utilicé Docker para la contenerización de aplicaciones, facilitando el despliegue en entornos Linux y Windows."
+        ],
+        "en": [
+          "Developed REST APIs in .NET Core and ASP.NET, integrating SQL Server and SQLite databases using Entity Framework.",
+          "Implemented user interfaces using React, Semantic UI, and Material UI.",
+          "Integrated JWT authentication and configured CI/CD pipelines in Azure DevOps for automated deployment.",
+          "Conducted test automation (Selenium WebDriver, SpecFlow) and functional/acceptance testing.",
+          "Utilized Docker for application containerization, facilitating deployment in both Linux and Windows environments."
+        ]
+      }
     },
     {
-      "role": "Backend Developer (Unity 3D Game)",
-      "company": "Usyit",
-      "years": "01/01/2021 - 04/01/2021",
-      "tasks": [
-        "Developed multiplayer and server-side logic using C# and PlayFab.",
-        "Implemented real-time communication and ranking statistics."
-      ]
+      "role": {
+        "es": "Backend Developer (Unity Juego Multijugador)",
+        "en": "Backend Developer (Unity Multiplayer Game)"
+      },
+      "company": { "es": "Usyit", "en": "Usyit" },
+      "years": { "es": "01/01/2021 - 01/04/2021", "en": "01/01/2021 - 04/01/2021" },
+      "tasks": {
+        "es": [
+          "Implementé lógica multijugador y servidores de conexión utilizando C# y la plataforma PlayFab.",
+          "Desarrollé la gestión de estadísticas, rankings y monetización (pagos online) dentro del juego.",
+          "Colaboré en el desarrollo frontend con Unity 3D para integrar la lógica de backend con la interfaz gráfica.",
+          "Implementé mecánicas de juego avanzadas y menús de opciones, asegurando la usabilidad del sistema."
+        ],
+        "en": [
+          "Implemented multiplayer logic and connection servers using C# and the PlayFab platform.",
+          "Developed statistics management, ranking systems, and monetization features (online payments) within the game.",
+          "Collaborated on frontend development with Unity 3D to integrate backend logic with the graphical interface.",
+          "Implemented advanced game mechanics and options menus, ensuring system usability."
+        ]
+      }
     },
     {
-      "role": "Backend Developer",
-      "company": "Bolivian Academy of Military History",
-      "years": "04/01/2020 - 09/01/2020",
-      "tasks": [
-        "Managed and maintained the central library database.",
-        "Performed data validation and process optimization."
-      ]
+      "role": { "es": "Backend Developer", "en": "Backend Developer" },
+      "company": {
+        "es": "Academia Boliviana de Historia Militar",
+        "en": "Bolivian Academy of Military History"
+      },
+      "years": { "es": "01/04/2020 - 01/09/2020", "en": "04/01/2020 - 09/01/2020" },
+      "tasks": {
+        "es": [
+          "Administré y mantuve la base de datos central utilizando MySQL y MariaDB.",
+          "Optimicé los procesos de registro documental y gestión de inventarios de libros.",
+          "Implementé validaciones y flujos de trabajo para la creación y gestión de nuevos registros históricos."
+        ],
+        "en": [
+          "Administered and maintained the central database using MySQL and MariaDB.",
+          "Optimized document registration workflows and book inventory management.",
+          "Implemented validations and workflows for the creation and management of new historical records."
+        ]
+      }
     },
     {
-      "role": "Full Stack Developer",
-      "company": "UTIC - EMI",
-      "years": "03/01/2020 - 05/01/2020",
-      "tasks": [
-        "Developed backend in .NET with MariaDB.",
-        "Built dynamic forms using HTML, CSS, TypeScript and jQuery."
-      ]
+      "role": { "es": "Desarrolladora Full Stack", "en": "Full Stack Developer" },
+      "company": { "es": "UTIC - EMI", "en": "UTIC - EMI" },
+      "years": { "es": "01/03/2020 - 01/05/2020", "en": "03/01/2020 - 05/01/2020" },
+      "tasks": {
+        "es": [
+          "Desarrollé el backend en .NET con conexión a bases de datos MariaDB, creando procedimientos, funciones y vistas para consultas avanzadas.",
+          "Implementé el frontend con HTML, TypeScript, CSS y jQuery para construir formularios dinámicos en Angular.",
+          "Participé activamente en la definición y creación de la estructura inicial completa de la base de datos del proyecto."
+        ],
+        "en": [
+          "Developed the backend in .NET with MariaDB database connectivity, creating procedures, functions, and views for advanced queries.",
+          "Implemented the frontend using HTML, TypeScript, CSS, and jQuery to build dynamic forms within Angular.",
+          "Actively participated in defining and creating the complete initial database structure for the project."
+        ]
+      }
     }
   ],
   "education": [
     {
-      "degree": "Bachelor of Systems Engineering",
-      "institution": "Military School of Engineering (EMI)",
-      "years": "01/01/2015 - 01/01/2020",
-      "location": "Cochabamba, Bolivia"
+      "degree": {
+        "es": "Ingeniería de Sistemas",
+        "en": "Systems Engineering"
+      },
+      "institution": {
+        "es": "Escuela Militar de Ingeniería (EMI)",
+        "en": "Military School of Engineering (EMI)"
+      },
+      "location": {
+        "es": "Cochabamba, Bolivia",
+        "en": "Cochabamba, Bolivia"
+      },
+      "years": {
+        "es": "01/02/2015 - 07/22/2020",
+        "en": "02/01/2015 - 22/07/2020"
+      }
     },
     {
-      "degree": "Diploma in Higher Education",
-      "institution": "Bolivian Adventist University (UAB)",
-      "years": "01/01/2023 - 12/01/2023",
-      "location": "Cochabamba, Bolivia"
+      "degree": {
+        "es": "Diplomado en Educación Superior",
+        "en": "Diploma in Higher Education"
+      },
+      "institution": {
+        "es": "Universidad Adventista de Bolivia (UAB)",
+        "en": "Adventist University of Bolivia (UAB)"
+      },
+      "location": {
+        "es": "Cochabamba, Bolivia",
+        "en": "Cochabamba, Bolivia"
+      },
+      "years": {
+        "es": "01/01/2023 - 16/11/2023",
+        "en": "01/01/2023 - 11/16/2023"
+      }
     }
   ],
   "achievements": [
-    { "title": "South American ICPC Competitor", "company": "EMI", "year": "2015-2017" },
-    { "title": "1st Place CTF (Advanced Category)", "company": "Agetic", "year": "2019" },
     {
-      "title": "Cybersecurity / Programming Conferences Participation",
-      "company": "EMI - AGETIC - INCIBE",
-      "year": "2016-2023"
+      "title": {
+        "es": "Coach en Campeonato de Programación",
+        "en": "Programming Championship Coach"
+      },
+      "company": {
+        "es": "Cocha Somos Innovación",
+        "en": "Cocha Somos Innovación"
+      },
+      "year": { "en": "07/27/2023", "es": "27/07/2023" }
+    },
+    {
+      "title": {
+        "es": "Reconocimiento por colaboración en Exposición Histórica Gigantes del Boquerón",
+        "en": "Recognition for Collaboration in the Historical Exhibition 'Gigantes del Boquerón'"
+      },
+      "company": {
+        "es": "ABHM",
+        "en": "ABHM"
+      },
+      "year": { "es": "26/10/2020", "en": "10/26/2020" }
+    },
+    {
+      "title": {
+        "es": "Primer Lugar Categoría Avanzada CTF-END GAME",
+        "en": "First Place – Advanced Category – CTF END GAME"
+      },
+      "company": {
+        "es": "Escuela Militar de Ingeniería (EMI)",
+        "en": "Military School of Engineering (EMI)"
+      },
+      "year": { "es": "24/04/2019", "en": "04/24/2019" }
+    },
+    {
+      "title": {
+        "es": "Clasificación ICPC Sudamericano 2017",
+        "en": "ICPC South American Regional Qualification 2017"
+      },
+      "company": { "es": "ACM-ICPC", "en": "ACM-ICPC" },
+      "year": { "es": "01/11/2017", "en": "11/01/2017" }
+    },
+    {
+      "title": { "es": "Participación ICPC Nacional 2017", "en": "ICPC National Competition 2017" },
+      "company": { "es": "ACM-ICPC", "en": "ACM-ICPC" },
+      "year": { "es": "02/09/2017", "en": "09/02/2017" }
+    },
+    {
+      "title": {
+        "es": "Clasificación ICPC Sudamericano 2016",
+        "en": "ICPC South American Regional Qualification 2016"
+      },
+      "company": { "es": "ACM-ICPC", "en": "ACM-ICPC" },
+      "year": { "es": "01/11/2016", "en": "11/01/2016" }
+    },
+    {
+      "title": { "es": "Participación ICPC Nacional 2016", "en": "ICPC National Competition 2016" },
+      "company": { "es": "ACM-ICPC", "en": "ACM-ICPC" },
+      "year": { "es": "30/11/2016", "en": "11/30/2016" }
+    },
+    {
+      "title": {
+        "es": "Clasificación ICPC Sudamericano 2015",
+        "en": "ICPC South American Regional Qualification 2015"
+      },
+      "company": { "es": "ACM-ICPC", "en": "ACM-ICPC" },
+      "year": { "es": "01/11/2015", "en": "11/01/2015" }
+    },
+    {
+      "title": { "es": "Participación ICPC Nacional 2015", "en": "ICPC National Competition 2015" },
+      "company": { "es": "ACM-ICPC", "en": "ACM-ICPC" },
+      "year": { "es": "20/09/2015", "en": "09/20/2015" }
+    },
+    {
+      "title": { "es": "Beca por Excelencia Académica", "en": "Academic Excellence Scholarship" },
+      "company": { "es": "EMI", "en": "EMI" },
+      "year": { "es": "01/02/2017 -  01/12/2017", "en": "02/01/2017 - 12/01/2017" }
+    },
+    {
+      "title": { "es": "Beca por Excelencia Académica", "en": "Academic Excellence Scholarship" },
+      "company": { "es": "EMI", "en": "EMI" },
+      "year": { "es": "01/02/2016 -  01/12/2016", "en": "02/01/2016 - 12/01/2016" }
     }
   ],
   "certifications": [
-    { "name": "Scrum Foundation Certification", "issuer": "BigAgile", "year": "2020", "hours": "" },
-    { "name": "Cybersecurity in Teleworking", "issuer": "INCIBE", "year": "2021", "hours": "" },
     {
-      "name": "Conversational English Skills",
-      "issuer": "Tsinghua University",
-      "year": "2022",
-      "hours": ""
+      "name": {
+        "es": "Diseño + IA: Como convertirte en un UX/UI todo terreno",
+        "en": "Design + AI: Become a Versatile UX/UI Professional"
+      },
+      "issuer": { "es": "Ecosistema Tech", "en": "Ecosistema Tech" },
+      "year": { "es": "03/06/2024", "en": "06/03/2024" },
+      "hours": { "es": "", "en": "" }
     },
     {
-      "name": "Mobile App Development Course",
-      "issuer": "Complutense University of Madrid",
-      "year": "2023",
-      "hours": ""
+      "name": { "es": "Taller de Figma", "en": "Figma Workshop" },
+      "issuer": { "es": "Desafío Latam", "en": "Desafío Latam" },
+      "year": { "es": "03/06/2024", "en": "06/03/2024" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": { "es": "Power BI Desde Cero", "en": "Power BI From Scratch" },
+      "issuer": { "es": "Ecosistema Tech", "en": "Ecosistema Tech" },
+      "year": { "es": "03/06/2024", "en": "06/03/2024" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": {
+        "es": "React para Principiantes: Construyendo aplicaciones web dinámicas",
+        "en": "React for Beginners: Building Dynamic Web Applications"
+      },
+      "issuer": { "es": "Desafío Latam", "en": "Desafío Latam" },
+      "year": { "es": "23/09/2024", "en": "09/23/2024" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": { "es": "Bases de Git y GitHub", "en": "Git and GitHub Fundamentals" },
+      "issuer": { "es": "Desafío Latam", "en": "Desafío Latam" },
+      "year": { "es": "23/09/2024", "en": "09/23/2024" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": { "es": "C# (Básico)", "en": "C# (Basic)" },
+      "issuer": { "es": "HackerRank", "en": "HackerRank" },
+      "year": { "es": "04/11/2024", "en": "11/04/2024" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": { "es": "Introducción al desarrollo web", "en": "Introduction to Web Development" },
+      "issuer": { "es": "Desafío Latam", "en": "Desafío Latam" },
+      "year": { "es": "09/11/2024", "en": "11/09/2024" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": { "es": "Cloud computing", "en": "Cloud Computing" },
+      "issuer": { "es": "Google Activate", "en": "Google Activate" },
+      "year": { "es": "20/12/2023", "en": "12/20/2023" },
+      "hours": { "es": "40 horas", "en": "40 hours" }
+    },
+    {
+      "name": {
+        "es": "Construye una app FullStack con Next.JS, Prisma y Shadcn/CN",
+        "en": "Build a FullStack App with Next.JS, Prisma and Shadcn/CN"
+      },
+      "issuer": { "es": "Ecosistema Tech", "en": "Ecosistema Tech" },
+      "year": { "es": "03/11/2025", "en": "11/03/2025" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": {
+        "es": "Capacitación: Aprende a crear y mantener tu negocio",
+        "en": "Training: Learn to Create and Sustain Your Business"
+      },
+      "issuer": { "es": "Coca Cola", "en": "Coca Cola" },
+      "year": { "es": "03/11/2025", "en": "11/03/2025" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": { "es": "Scrum Fundamentals", "en": "Scrum Fundamentals" },
+      "issuer": { "es": "Big Agile", "en": "Big Agile" },
+      "year": { "es": "14/08/2020", "en": "08/14/2020" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": {
+        "es": "Curso de Robótica con Arduino",
+        "en": "Educational Robotics Course with Arduino"
+      },
+      "issuer": { "es": "TecBolivia", "en": "TecBolivia" },
+      "year": { "es": "29/01/2016", "en": "01/29/2016" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": {
+        "es": "Hardware y software en telefonía móvil",
+        "en": "Mobile Phone Hardware and Software"
+      },
+      "issuer": {
+        "es": "Centro de Enseñanza e Innovación Tecnológica (UMSS)",
+        "en": "Center of Teaching and Technological Innovation (UMSS)"
+      },
+      "year": { "es": "25/03/2016", "en": "03/25/2016" },
+      "hours": { "es": "40 horas", "en": "40 hours" }
+    },
+    {
+      "name": { "es": "Expositora en Feria de Robótica", "en": "Speaker at Robotics Fair" },
+      "issuer": { "es": "INFocal", "en": "INFocal" },
+      "year": { "es": "29/10/2016", "en": "10/29/2016" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": {
+        "es": "Conferencia de tecnología, investigación e innovación",
+        "en": "Conference on Technology, Research and Innovation"
+      },
+      "issuer": {
+        "es": "Escuela Militar de Ingeniería (EMI)",
+        "en": "Military School of Engineering (EMI)"
+      },
+      "year": { "es": "01/03/2017", "en": "03/01/2017" },
+      "hours": { "es": "10 horas", "en": "10 hours" }
+    },
+    {
+      "name": {
+        "es": "1ra Conferencia Internacional de Ciberseguridad",
+        "en": "1st International Cybersecurity Conference"
+      },
+      "issuer": {
+        "es": "Escuela Militar de Ingeniería (EMI)",
+        "en": "Military School of Engineering (EMI)"
+      },
+      "year": { "es": "18/06/2017", "en": "06/18/2017" },
+      "hours": { "es": "10 horas", "en": "10 hours" }
+    },
+    {
+      "name": { "es": "Nivel básico 1 de coreano", "en": "Korean Level 1" },
+      "issuer": { "es": "KOICA", "en": "KOICA" },
+      "year": { "es": "07/07/2017", "en": "07/07/2017" },
+      "hours": { "es": "90 horas", "en": "90 hours" }
+    },
+    {
+      "name": {
+        "es": "Congreso Internacional de Ingeniería de Sistemas, Informática y Telecomunicaciones",
+        "en": "International Congress of Systems, Informatics and Telecommunications"
+      },
+      "issuer": {
+        "es": "Escuela Militar de Ingeniería (EMI)",
+        "en": "Military School of Engineering (EMI)"
+      },
+      "year": { "es": "06/05/2016", "en": "06/05/2016" },
+      "hours": { "es": "60 horas", "en": "60 hours" }
+    },
+    {
+      "name": {
+        "es": "Conferencia: Litio, un impulso al futuro de Bolivia",
+        "en": "Conference: Lithium, a Boost to Bolivia's Future"
+      },
+      "issuer": {
+        "es": "Escuela Militar de Ingeniería (EMI)",
+        "en": "Military School of Engineering (EMI)"
+      },
+      "year": { "es": "11/03/2019", "en": "03/11/2019" },
+      "hours": { "es": "12 horas", "en": "12 hours" }
+    },
+    {
+      "name": {
+        "es": "Primer Congreso Internacional de Seguridad Informática",
+        "en": "1st International Cybersecurity Congress"
+      },
+      "issuer": { "es": "AGETIC", "en": "AGETIC" },
+      "year": { "es": "04/10/2019", "en": "10/04/2019" },
+      "hours": { "es": "20 horas", "en": "20 hours" }
+    },
+    {
+      "name": {
+        "es": "Segundo Congreso Internacional de Seguridad Informática",
+        "en": "2nd International Cybersecurity Congress"
+      },
+      "issuer": { "es": "AGETIC", "en": "AGETIC" },
+      "year": { "es": "12/01/2018", "en": "01/12/2018" },
+      "hours": { "es": "20 horas", "en": "20 hours" }
+    },
+    {
+      "name": {
+        "es": "Webinar internacional de sistema braile",
+        "en": "International Webinar on Braille System"
+      },
+      "issuer": {
+        "es": "Red Internacional de Promotores ODS",
+        "en": "International Network of SDG Promoters"
+      },
+      "year": { "es": "29/06/2021", "en": "06/29/2021" },
+      "hours": { "es": "5 horas", "en": "5 hours" }
+    },
+    {
+      "name": {
+        "es": "Protege tu negocio: ciberseguridad en el teletrabajo",
+        "en": "Protect Your Business: Cybersecurity for Remote Work"
+      },
+      "issuer": { "es": "Google Activate", "en": "Google Activate" },
+      "year": { "es": "23/07/2021", "en": "07/23/2021" },
+      "hours": { "es": "2 horas", "en": "2 hours" }
+    },
+    {
+      "name": {
+        "es": "Word Forms and Simple Present Tense",
+        "en": "Word Forms and Simple Present Tense"
+      },
+      "issuer": {
+        "es": "University of California, Irvine",
+        "en": "University of California, Irvine"
+      },
+      "year": { "es": "16/06/2022", "en": "06/16/2022" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": { "es": "Conversational English Skills", "en": "Conversational English Skills" },
+      "issuer": { "es": "Tsinghua University", "en": "Tsinghua University" },
+      "year": { "es": "19/11/2022", "en": "11/19/2022" },
+      "hours": { "es": "", "en": "" }
+    },
+    {
+      "name": { "es": "Desarrollo de apps móviles", "en": "Mobile App Development" },
+      "issuer": { "es": "Google Activate", "en": "Google Activate" },
+      "year": { "es": "10/01/2023", "en": "01/10/2023" },
+      "hours": { "es": "40 horas", "en": "40 hours" }
+    },
+    {
+      "name": {
+        "es": "XXI Jornada de capacitación docente (Evaluación basada en competencias)",
+        "en": "XXI Teacher Training Conference (Competency-Based Evaluation)"
+      },
+      "issuer": {
+        "es": "Universidad Adventista de Bolivia (UAB)",
+        "en": "Adventist University of Bolivia (UAB)"
+      },
+      "year": { "es": "07/02/2023", "en": "02/07/2023" },
+      "hours": { "es": "5 horas", "en": "5 hours" }
+    },
+    {
+      "name": {
+        "es": "II Convención internacional de Ingeniería de Sistemas (Tendencias en IA)",
+        "en": "II International Systems Engineering Convention (AI Trends)"
+      },
+      "issuer": {
+        "es": "Universidad Adventista de Bolivia (UAB)",
+        "en": "Adventist University of Bolivia (UAB)"
+      },
+      "year": { "es": "22/10/2023", "en": "10/22/2023" },
+      "hours": { "es": "13 horas", "en": "13 hours" }
+    },
+    {
+      "name": {
+        "es": "Workshop MCP con IA para detectar errores en Pull Requests",
+        "en": "MCP Server Workshop with AI for Pull Request Error Detection"
+      },
+      "issuer": {
+        "es": "Universidad Adventista de Bolivia (UAB)",
+        "en": "Adventist University of Bolivia (UAB)"
+      },
+      "year": { "es": "27/10/2025", "en": "10/27/2025" },
+      "hours": { "es": "", "en": "" }
     }
   ]
 }
