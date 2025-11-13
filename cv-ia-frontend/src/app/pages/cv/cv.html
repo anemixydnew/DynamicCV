@@ -74,7 +74,7 @@
 
     <div class="cv-right p-4">
       <h4 class="section-header section-title-right">{{ 'PROFESSIONAL_SUMMARY' | translate }}</h4>
-      <p class="size">{{ data.description[translate.currentLang] }}</p>
+      <p class="size margin-p">{{ data.description[translate.currentLang] }}</p>
       <h4 class="section-header section-title-right mt-4">{{ 'EXPERIENCE' | translate }}</h4>
       <div class="type-container">
         <div *ngFor="let exp of data.experience" class="achievement-item mb-3">
@@ -108,7 +108,9 @@
             achievement.title[translate.currentLang]
           }}</strong>
           <span class="size">{{ achievement.company[translate.currentLang] }}</span>
-          <span class="style-script-regular-small"> ({{ achievement.year[translate.currentLang] }})</span>
+          <span class="style-script-regular-small">
+            ({{ achievement.year[translate.currentLang] }})</span
+          >
         </div>
       </div>
       <h4 class="section-header section-title-right mt-4">{{ 'CERTIFICATIONS' | translate }}</h4>
@@ -118,12 +120,12 @@
           class="achievement-item certification-row mb-3"
         >
           <div class="left-col-certification">
-            <strong class="strong-color">{{ cert.year[translate.currentLang] }}</strong>
+            <strong class="strong-color size">{{ cert.year[translate.currentLang] }}</strong>
             <span class="size">{{ cert.hours[translate.currentLang] }}</span>
           </div>
           <div class="right-col-certification">
-            <span class="size">{{ cert.name[translate.currentLang]  }}</span>
-            <span class="style-script-regular-small">{{ cert.issuer[translate.currentLang]  }}</span>
+            <span class="size">{{ cert.name[translate.currentLang] }}</span>
+            <span class="style-script-regular-small">{{ cert.issuer[translate.currentLang] }}</span>
           </div>
         </div>
       </div>
@@ -153,3 +155,13 @@
   <option value="en">English</option>
 </select>
 <button (click)="printDocument()">Generar PDF/Imprimir</button>
+<div class="ai-panel">
+  <textarea [(ngModel)]="jobDescription" placeholder="Pega aquí la descripción del puesto"></textarea>
+
+  <button (click)="processWithAI()">Analizar con IA</button>
+</div>
+
+<div *ngIf="resultAI">
+  <h3>CV Optimizado</h3>
+  <pre>{{ resultAI | json }}</pre>
+</div>
