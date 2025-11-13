@@ -42,7 +42,7 @@ export class CvComponent {
   selectedLang: string = 'es';
   @ViewChild('cvContainer') cvContainer!: ElementRef;
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, private http: HttpClient) {
     this.selectedLang = 'es';
     this.translate.use(this.selectedLang);
     this.sortDataByDate(this.data.certifications, 'es', 'year');
@@ -51,6 +51,19 @@ export class CvComponent {
     this.sortDataByDate(this.data.achievements, 'es', 'year');
     this.sortSkills();
   }
+
+  jobDescription: string = '';
+  resultAI: any = null;
+
+ processWithAI() {
+  this.http.post("http://localhost:4000/process-job", {
+    profileData: this.data,
+    jobDescription: this.jobDescription
+  }).subscribe(result => {
+    console.log("RESULTADO IA:", result);
+  });
+}
+
 
   parseDate(dateStr: string, lang: string): Date {
     if (dateStr.includes('-')) {
