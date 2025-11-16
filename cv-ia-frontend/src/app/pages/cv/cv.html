@@ -1,3 +1,44 @@
+<div class="header-fixed">
+  <div class="header-title">
+    <h1 class="style-script-regular">{{ 'CONFIGURATION' | translate }}</h1>
+  </div>
+  <div class="header-buttons">
+    <div class="custom-select-wrapper">
+      <div class="custom-select" [class.open]="dropdownOpen" (click)="dropdownOpen = !dropdownOpen">
+        <span>{{ selectedLang === 'es' ? 'Español' : 'English' }}</span>
+        <span class="arrow">▼</span>
+      </div>
+      <ul class="custom-options" *ngIf="dropdownOpen">
+        <li
+          class="option"
+          [class.selected]="selectedLang === 'es'"
+          (click)="selectLang('es'); $event.stopPropagation()"
+        >
+          Español
+        </li>
+        <li
+          class="option"
+          [class.selected]="selectedLang === 'en'"
+          (click)="selectLang('en'); $event.stopPropagation()"
+        >
+          English
+        </li>
+      </ul>
+    </div>
+
+    <button class="header-btn" (click)="showNetworkIntelligence = true">
+      <span class="material-symbols-outlined"> network_intelligence </span>
+    </button>
+    <button class="header-btn" (click)="showThemeSelector = true">
+      <span class="material-symbols-outlined"> palette </span>
+    </button>
+    <button class="header-btn" (click)="printDocument()">
+      <span class="material-symbols-outlined"> print </span>
+      {{ 'GENERATE_PDF_PRINT' | translate }}
+    </button>
+  </div>
+</div>
+
 <div id="contentToPrint" class="printable-area">
   <div id="cv" class="cv-container d-flex">
     <link
@@ -54,7 +95,8 @@
         <div *ngFor="let skill of data.skills" class="skill-item">
           <span class="skill-name size">{{ skill.name }}</span>
 
-          <div class="circular-progress" [style]="getProgressStyle(skill.level)">
+          <div class="skill-level-display">
+            <div class="circular-progress" [style]="getProgressStyle(skill.level)"></div>
             <span class="percentage">{{ skill.level }}%</span>
           </div>
         </div>
@@ -69,6 +111,7 @@
             <span class="star" [class.filled]="i < lang.level">★</span>
           </ng-container>
         </span>
+        <span class="percentage">{{ lang.level * 20 }}%</span>
       </div>
     </div>
 
@@ -133,32 +176,209 @@
   </div>
 </div>
 
-<button (click)="changeTheme('theme-pink')">Rosa</button>
-<button (click)="changeTheme('theme-green')">Verde</button>
-<button (click)="changeTheme('theme-blue')">Azul</button>
-<button (click)="changeTheme('theme-purple')">purpura</button>
-<button (click)="changeTheme('theme-orange')">Naranja</button>
-<button (click)="changeTheme('theme-yellow')">Amarillo</button>
-<button (click)="changeTheme('theme-black')">Negro</button>
-<button (click)="changeTheme('theme-brown')">marron</button>
-<button (click)="changeTheme('theme-aqua')">celeste</button>
-<button (click)="changeTheme('theme-greenyellow')">verde bajo</button>
-<button (click)="changeTheme('theme-red')">rojo</button>
-<button (click)="changeTheme('theme-royalblue')">azul real</button>
-<button (click)="changeTheme('theme-mistyrose')">rosa pálido</button>
-<button (click)="changeTheme('theme-deeppink')">rosa intenso</button>
-<button (click)="changeTheme('theme-sandybrown')">marrón claro</button>
-<button (click)="changeTheme('theme-gray')">gris</button>
+<div class="theme-modal" *ngIf="showThemeSelector">
+  <div class="theme-modal-content">
+    <div class="contact-itemAI modal-header-title">
+      <span class="ai-title">
+        {{ 'SELECT_THEME' | translate }}
+      </span>
+      <span class="material-symbols-outlined close-icon" (click)="showThemeSelector = false">
+        close
+      </span>
+    </div>
+    <div class="theme-grid">
+      <div class="theme-card red" (click)="changeTheme('theme-red'); showThemeSelector = false">
+        <h4>{{ 'RED' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color red">Energy</span>
+          <span style="background-color: white; color: #500a0a; font-weight: bold">Passion</span>
+          <span class="span-color red">Danger</span>
+        </div>
+      </div>
 
-<select [(ngModel)]="selectedLang" (ngModelChange)="changeLanguage()">
-  <option value="es">Español</option>
-  <option value="en">English</option>
-</select>
-<button (click)="printDocument()">Generar PDF/Imprimir</button>
-<div class="ai-panel">
-  <textarea [(ngModel)]="jobDescription" placeholder="Pega aquí la descripción del puesto"></textarea>
+      <div class="theme-card pink" (click)="changeTheme('theme-pink'); showThemeSelector = false">
+        <h4>{{ 'PINK' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color pink">Energy</span>
+          <span style="background-color: white; color: #900d39; font-weight: bold">Passion</span>
+          <span class="span-color pink">Danger</span>
+        </div>
+      </div>
 
-  <button (click)="processWithAI()">Analizar con IA</button>
+      <div class="theme-card green" (click)="changeTheme('theme-green'); showThemeSelector = false">
+        <h4>{{ 'GREEN' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color green">Energy</span>
+          <span style="background-color: white; color: #223f02; font-weight: bold">Passion</span>
+          <span class="span-color green">Danger</span>
+        </div>
+      </div>
+
+      <div class="theme-card blue" (click)="changeTheme('theme-blue'); showThemeSelector = false">
+        <h4>{{ 'BLUE' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color blue">Energy</span>
+          <span style="background-color: white; color: #0d1626; font-weight: bold">Passion</span>
+          <span class="span-color blue">Danger</span>
+        </div>
+      </div>
+
+      <div
+        class="theme-card purple"
+        (click)="changeTheme('theme-purple'); showThemeSelector = false"
+      >
+        <h4>{{ 'PURPLE' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color purple">Energy</span>
+          <span style="background-color: white; color: #4a148c; font-weight: bold">Passion</span>
+          <span class="span-color purple">Danger</span>
+        </div>
+      </div>
+
+      <div
+        class="theme-card orange"
+        (click)="changeTheme('theme-orange'); showThemeSelector = false"
+      >
+        <h4>{{ 'ORANGE' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color orange">Energy</span>
+          <span style="background-color: white; color: #89580f; font-weight: bold">Passion</span>
+          <span class="span-color orange">Danger</span>
+        </div>
+      </div>
+
+      <div
+        class="theme-card yellow"
+        (click)="changeTheme('theme-yellow'); showThemeSelector = false"
+      >
+        <h4>{{ 'YELLOW' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color yellow">Energy</span>
+          <span style="background-color: white; color: #918304; font-weight: bold">Passion</span>
+          <span class="span-color yellow">Danger</span>
+        </div>
+      </div>
+
+      <div class="theme-card black" (click)="changeTheme('theme-black'); showThemeSelector = false">
+        <h4>{{ 'BLACK' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color black">Energy</span>
+          <span style="background-color: white; color: #7a6e6e; font-weight: bold">Passion</span>
+          <span class="span-color black">Danger</span>
+        </div>
+      </div>
+
+      <div class="theme-card brown" (click)="changeTheme('theme-brown'); showThemeSelector = false">
+        <h4>{{ 'BROWN' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color brown">Energy</span>
+          <span style="background-color: white; color: #3e2723; font-weight: bold">Passion</span>
+          <span class="span-color brown">Danger</span>
+        </div>
+      </div>
+
+      <div class="theme-card aqua" (click)="changeTheme('theme-aqua'); showThemeSelector = false">
+        <h4>{{ 'AQUA' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color aqua">Energy</span>
+          <span style="background-color: white; color: #006064; font-weight: bold">Passion</span>
+          <span class="span-color aqua">Danger</span>
+        </div>
+      </div>
+
+      <div
+        class="theme-card greenyellow"
+        (click)="changeTheme('theme-greenyellow'); showThemeSelector = false"
+      >
+        <h4>{{ 'GREENYELLOW' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color greenyellow">Energy</span>
+          <span style="background-color: white; color: #466126; font-weight: bold">Passion</span>
+          <span class="span-color greenyellow">Danger</span>
+        </div>
+      </div>
+
+      <div
+        class="theme-card royalblue"
+        (click)="changeTheme('theme-royalblue'); showThemeSelector = false"
+      >
+        <h4>{{ 'ROYALBLUE' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color royalblue">Energy</span>
+          <span style="background-color: white; color: #0d47a1; font-weight: bold">Passion</span>
+          <span class="span-color royalblue">Danger</span>
+        </div>
+      </div>
+
+      <div
+        class="theme-card mistyrose"
+        (click)="changeTheme('theme-mistyrose'); showThemeSelector = false"
+      >
+        <h4>{{ 'MISTYROSE' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color mistyrose">Energy</span>
+          <span style="background-color: white; color: #b36a85; font-weight: bold">Passion</span>
+          <span class="span-color mistyrose">Danger</span>
+        </div>
+      </div>
+
+      <div
+        class="theme-card deeppink"
+        (click)="changeTheme('theme-deeppink'); showThemeSelector = false"
+      >
+        <h4>{{ 'DEEPPINK' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color deeppink">Energy</span>
+          <span style="background-color: white; color: #4e031f; font-weight: bold">Passion</span>
+          <span class="span-color deeppink">Danger</span>
+        </div>
+      </div>
+
+      <div
+        class="theme-card sandybrown"
+        (click)="changeTheme('theme-sandybrown'); showThemeSelector = false"
+      >
+        <h4>{{ 'SANDYBROWN' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color sandybrown">Energy</span>
+          <span style="background-color: white; color: #5b4000; font-weight: bold">Passion</span>
+          <span class="span-color sandybrown">Danger</span>
+        </div>
+      </div>
+
+      <div class="theme-card gray" (click)="changeTheme('theme-gray'); showThemeSelector = false">
+        <h4>{{ 'GRAY' | translate }}</h4>
+        <div class="tags">
+          <span class="span-color gray">Energy</span>
+          <span style="background-color: white; color: #262323; font-weight: bold">Passion</span>
+          <span class="span-color gray">Danger</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="theme-modal" *ngIf="showNetworkIntelligence">
+  <div class="theme-modal-content">
+    <div class="contact-itemAI modal-header-title">
+      <span class="ai-title">
+        {{ 'ANALYZE_IA' | translate }}
+      </span>
+      <span class="material-symbols-outlined close-icon" (click)="showNetworkIntelligence = false">
+        close
+      </span>
+    </div>
+    <div class="theme-grid">
+      <textarea
+        style="height: 300px"
+        [(ngModel)]="jobDescription"
+        placeholder="{{ 'JOB_DESCRIPTION' | translate }}"
+      ></textarea>
+    </div>
+    <div style="padding-top: 10px; direction: rtl">
+      <button class="span-color" (click)="processWithAI()">{{ 'ANALYZE_IA' | translate }}</button>
+    </div>
+  </div>
 </div>
 
 <div *ngIf="resultAI">
