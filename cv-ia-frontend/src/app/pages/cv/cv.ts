@@ -55,15 +55,16 @@ export class CvComponent {
   jobDescription: string = '';
   resultAI: any = null;
 
- processWithAI() {
-  this.http.post("http://localhost:4000/process-job", {
-    profileData: this.data,
-    jobDescription: this.jobDescription
-  }).subscribe(result => {
-    console.log("RESULTADO IA:", result);
-  });
-}
-
+  processWithAI() {
+    this.http
+      .post('http://localhost:4000/process-job', {
+        profileData: this.data,
+        jobDescription: this.jobDescription,
+      })
+      .subscribe((result) => {
+        console.log('IA response:', result);
+      });
+  }
 
   parseDate(dateStr: string, lang: string): Date {
     if (dateStr.includes('-')) {
@@ -83,6 +84,16 @@ export class CvComponent {
   changeTheme(theme: string) {
     this.currentTheme = theme;
     document.documentElement.className = theme;
+  }
+
+  showThemeSelector = false;
+  showNetworkIntelligence = false;
+  dropdownOpen = false;
+
+  selectLang(lang: string) {
+    this.selectedLang = lang;
+    this.dropdownOpen = false;
+    this.changeLanguage();
   }
 
   changeLanguage() {

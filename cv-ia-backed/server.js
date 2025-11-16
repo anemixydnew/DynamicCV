@@ -18,75 +18,79 @@ app.post("/process-job", async (req, res) => {
     }
 
     const promptText = `
-You are an AI that adapts information from a CV to the job application.
-Your task is:
+You are an AI that adapts information from a CV to the job application. Everything in JSON format, tailored exclusively to the position, maintaining:
+
+✔ All your original objects (role, company, years, etc.)
+✔ I only rewrite the tasks to fit the position
+✔ Skills filtered according to the position (only those you actually have)
+✔ Achievements and Certifications only if they are technically relevant
+✔ Description in Spanish and English adapted to the role
+✔ Absolutely nothing invented
 
 1) Read the following job description that will be sent to you: "${jobDescription}"
 
-2) Read this user profile (JSON) ${JSON.stringify(
-      profileData
-    )} that contains all the CV information
-3) Select and return only the information relevant to the position:
-- Only relevant skills
-- Only relevant certifications
-- Only relevant achievements
-4) Based on the summary I will send you, generate a new summary based on the job description in English and Spanish
+2) Read this user profile (JSON) ${JSON.stringify(profileData)} 
+  
+  that contains all the CV information
 
-5) Adapt the tasks of the work experience to fit the job description
+3) Generate a professional Description in Spanish tailored to the position (field: summary.es).
 
-6) Respond **only in valid JSON** with this structure:
-{
-  "summary": { "es": "", "en": "" },
-  "skills": [
-    { "name": "", "level": 0 }
-  ],
-  "certifications": [
+4) Generate the same Description in English (field: summary.en).
+
+5) Select only the candidate's relevant skills.
+
+6) Select relevant achievements (if none are relevant, return empty [].
+
+7) Select relevant certifications (if none are relevant, return empty [].
+
+8) Adapt the tasks of the work experience to fit the job description
+
+9) Respond **only in valid JSON** with this structure:
+${{
+  description: { es: "", en: "" },
+  skills: [{ name: "", level: 0 }],
+  certifications: [
     {
-      "name": { "es": "", "en": "" },
-      "issuer": { "es": "", "en": "" },
-      "year": { "es": "", "en": "" },
-      "hours": { "es": "", "en": "" }
-    }
+      name: { es: "", en: "" },
+      issuer: { es: "", en: "" },
+      year: { es: "", en: "" },
+      hours: { es: "", en: "" },
+    },
   ],
-  "achievements": [
+  achievements: [
     {
-      "title": {
-        "es": "",
-        "en": ""
+      title: {
+        es: "",
+        en: "",
       },
-      "company": {
-        "es": "",
-        "en": ""
+      company: {
+        es: "",
+        en: "",
       },
-      "year": { "en": "", "es": "" }
-    }
+      year: { en: "", es: "" },
+    },
   ],
-  "experience": [
+  experience: [
     {
-      "role": {
-        "es": "",
-        "en": ""
+      role: {
+        es: "",
+        en: "",
       },
-      "company": {
-        "es": "",
-        "en": ""
+      company: {
+        es: "",
+        en: "",
       },
-      "years": { "es": "", "en": "" },
-      "tasks": {
-        "es": [
-          ""
-        ],
-        "en": [
-          ""
-        ]
-      }
-    }
-  ]
-}
+      years: { es: "", en: "" },
+      tasks: {
+        es: [""],
+        en: [""],
+      },
+    },
+  ],
+}}
 
 Don't explain anything. Just return the JSON.
 `;
-    console.log("Prompt sending to Ollama:", promptText);
 
     const response = await fetch("http://localhost:11434/api/generate", {
       method: "POST",
