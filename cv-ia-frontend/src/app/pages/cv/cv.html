@@ -182,9 +182,14 @@
       <span class="ai-title">
         {{ 'SELECT_THEME' | translate }}
       </span>
-      <span class="material-symbols-outlined close-icon" (click)="showThemeSelector = false">
-        close
-      </span>
+      <div class="header-buttons">
+        <span class="material-symbols-outlined add-icon" (click)="showCreateNewTheme = true">
+          add_notes
+        </span>
+        <span class="material-symbols-outlined close-icon" (click)="showThemeSelector = false">
+          close
+        </span>
+      </div>
     </div>
     <div class="theme-grid">
       <div class="theme-card red" (click)="changeTheme('theme-red'); showThemeSelector = false">
@@ -376,8 +381,86 @@
       ></textarea>
     </div>
     <div style="padding-top: 10px; direction: rtl">
-      <button class="span-color" (click)="processWithAI()">{{ 'ANALYZE_IA' | translate }}</button>
+      <button
+        class="span-color"
+        style="border: 2px solid var(--color-secondary)"
+        (click)="processWithAI()"
+      >
+        {{ 'ANALYZE_IA' | translate }}
+      </button>
     </div>
+  </div>
+</div>
+
+<div class="theme-modal" *ngIf="showCreateNewTheme">
+  <div class="theme-modal-content">
+    <div class="contact-itemAI modal-header-title">
+      <span class="ai-title">
+        {{ 'CREATE_NEW_THEME' | translate }}
+      </span>
+      <span class="material-symbols-outlined close-icon" (click)="showCreateNewTheme = false">
+        close
+      </span>
+    </div>
+    <form (ngSubmit)="createTheme()" class="theme-form theme-grid-form">
+      <div class="form_new_theme">
+        <span>{{ 'COLOR_NAME_ES' | translate }}</span>
+        <input class="stars" type="text" [(ngModel)]="theme.esName" name="esName" required />
+        <span>{{ 'COLOR_NAME_EN' | translate }}</span>
+        <input class="stars" type="text" [(ngModel)]="theme.enName" name="enName" required />
+      </div>
+      <div class="form_new_theme">
+        <span>{{ 'PRIMARY_COLOR' | translate }}</span>
+        <input
+          class="stars color_input"
+          type="color"
+          [(ngModel)]="theme.primary"
+          name="primary"
+          required
+        />
+        <span>{{ 'SECONDARY_COLOR' | translate }}</span>
+        <input
+          class="stars color_input"
+          type="color"
+          [(ngModel)]="theme.secondary"
+          name="secondary"
+          required
+        />
+      </div>
+      <div class="form_new_theme_image">
+        <span>{{ 'SELECT_IMAGE' | translate }}</span>
+        <div class="image-picker">
+          <div
+            class="preview-option"
+            *ngFor="let img of availableImages"
+            (click)="selectImage(img)"
+            [class.selected]="theme.image === img"
+          >
+            <img [src]="'assets/' + img" style="width: 100px; border: 3px solid var(--color-primary); border-radius: 6px;" />
+          </div>
+        </div>
+      </div>
+      <div class="form_new_theme_upload_image">
+        <span>{{ 'SELECT_NEW_IMAGE' | translate }}</span>
+        <label class="upload-label">
+          <span class="custom-file-button">{{ 'UPLOAD_IMAGE' | translate }}</span>
+          <input
+            type="file"
+            accept="image/*"
+            (change)="uploadImage($event)"
+            class="hidden-file-input"
+          />
+        </label>
+        <span class="file-name">
+          {{ selectedFileName || ('NO_FILE_SELECTED' | translate) }}
+        </span>
+      </div>
+      <div class="form_new_theme_save">
+        <button type="submit" class="btn custom-file-button">
+          {{ 'SAVE' | translate }}
+        </button>
+      </div>
+    </form>
   </div>
 </div>
 

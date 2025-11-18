@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import fetch from "node-fetch";
+import fs from "fs";
 
 const app = express();
 app.use(cors());
@@ -143,3 +144,66 @@ Don't explain anything. Just return the JSON.
 app.listen(4000, () => {
   console.log("✅ Server ready at http://localhost:4000");
 });
+
+app.post("/create-theme", (req, res) => {
+  const { esName, enName, primary, secondary, image } = req.body;
+  const themeClass = enName.toLowerCase().replace(/\s+/g, "");
+
+  const newThemeStyle = `
+    .theme-${themeClass} {
+      --color-primary: ${primary};
+      --color-secondary: ${secondary};
+    }
+    `;
+
+  fs.appendFileSync("./../cv-ia-frontend/src/styles.scss", newThemeStyle);
+
+  const newThemeInCV = `
+    .theme-card.${themeClass} {
+      background: ${primary};
+    }
+    .span-color.${themeClass} {
+      background: ${secondary} !important;
+      color: white !important;
+      width: 80px;
+    }
+    `;
+
+  fs.appendFileSync("./../cv-ia-frontend/src/app/pages/cv/cv.scss", newThemeInCV);
+
+  const key = enName.toUpperCase().replace(/\s+/g, "_");
+  addTranslation("es", key, esName);
+  addTranslation("en", key, enName);
+
+  const cvPath = "./../cv-ia-frontend/src/app/pages/cv/cv.html";
+  let html = fs.readFileSync(cvPath, "utf-8");
+
+  const block = `
+    <div class="theme-card ${themeClass}" (click)="changeTheme('theme-${themeClass}'); showThemeSelector = false">
+      <h4>{{ '${key}' | translate }}</h4>
+      <div class="tags">
+        <span class="span-color ${themeClass}">Energy</span>
+        <span style="background-color: white; color: ${secondary}; font-weight: bold">Passion</span>
+        <span class="span-color ${themeClass}">Danger</span>
+      </div>
+    </div>
+`;
+
+  if (!html.includes(`theme-card ${themeClass}`)) {
+    html = html.replace(
+      `<div class="theme-grid">`,
+      `<div class="theme-grid">${block}`
+    );
+
+    fs.writeFileSync(cvPath, html, "utf-8");
+  }
+
+  res.json({ status: "ok" });
+});
+
+function addTranslation(lang, key, value) {
+  const path = `./../cv-ia-frontend/public/assets/i18n/${lang}.json`;
+  const file = JSON.parse(fs.readFileSync(path, "utf8"));
+  file[key.toUpperCase()] = value;
+  fs.writeFileSync(path, JSON.stringify(file, null, 2));
+}

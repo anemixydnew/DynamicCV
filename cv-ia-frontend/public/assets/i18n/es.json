@@ -28,5 +28,17 @@
   "SANDYBROWN": "Marrón Arenoso",
   "GRAY": "Gris",
   "ANALYZE_IA": "Analizar con IA",
-  "JOB_DESCRIPTION": "Pega aquí la descripción del puesto"
+  "JOB_DESCRIPTION": "Pega aquí la descripción del puesto",
+  "CREATE_NEW_THEME": "Crear Nuevo Tema",
+  "COLOR_NAME_ES": "Nombre del color (ES)",
+  "COLOR_NAME_EN": "Nombre del color (EN)",
+  "PRIMARY_COLOR": "Color Primario",
+  "SECONDARY_COLOR": "Color Secundario",
+  "SELECT_IMAGE": "Seleccionar Imagen",
+  "UPLOAD_IMAGE": "Subir Imagen",
+  "SAVE": "Guardar",
+  "CANCEL": "Cancelar",
+  "SELECT_NEW_IMAGE": "En caso de no encontrar la imagen deseada, suba una nueva",
+  "NO_FILE_SELECTED": "Ningún archivo seleccionado",
+  "IMAGE_UPLOADED": "Imagen subida con éxito"
 }

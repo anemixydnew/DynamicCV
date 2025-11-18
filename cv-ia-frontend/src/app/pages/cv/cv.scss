@@ -249,8 +249,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .lang-name {
@@ -462,6 +468,11 @@
   max-height: 60vh;
 }
 
+.theme-grid-form {
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
 .theme-card {
   width: 100%;
   padding: 12px;
@@ -488,13 +499,6 @@
   margin-bottom: 5px;
   display: inline-block;
   font-size: 14px;
-}
-
-.span-color {
-  width: 150px;
-  background: var(--color-secondary) !important;
-  color: white !important;
-  border-color: var(--color-secondary);
 }
 
 .theme-card.red {
@@ -690,4 +694,110 @@
   font-size: 30px;
   cursor: pointer;
   flex-shrink: 0;
+}
+
+.add-icon {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.form_new_theme {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+  width: 98%;
+}
+
+.form_new_theme_upload_image {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.form_new_theme_save {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  width: 95%;
+  justify-content: end;
+}
+
+.form_new_theme_image {
+  display: grid;
+  align-items: center;
+  width: 98%;
+}
+
+.color_input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color_input::-webkit-color-swatch {
+  border: none;
+  border-radius: 6px;
+}
+
+.color_input {
+  width: 190px;
+  height: 35px;
+  padding: 0;
+  border-radius: 6px;
+}
+
+.image-picker {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 20px;
+  width: 98%;
+  justify-items: anchor-center;
+  padding-bottom: 10px;
+}
+
+.upload-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.custom-file-button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 2px solid var(--color-secondary);
+  transition: all 0.2s ease;
+}
+
+.custom-file-button:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+.span-color {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 6px;
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+}
+
+.span-color:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #555;
 }
