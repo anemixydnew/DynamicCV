@@ -28,5 +28,17 @@
   "SANDYBROWN": "Sandy Brown",
   "GRAY": "Gray",
   "ANALYZE_IA": "Analyze with AI",
-  "JOB_DESCRIPTION": "Paste the job description here"
+  "JOB_DESCRIPTION": "Paste the job description here",
+  "CREATE_NEW_THEME": "Create New Theme",
+  "COLOR_NAME_ES": "Color Name (ES)",
+  "COLOR_NAME_EN": "Color Name (EN)",
+  "PRIMARY_COLOR": "Primary Color",
+  "SECONDARY_COLOR": "Secondary Color",
+  "SELECT_IMAGE": "Select Image",
+  "UPLOAD_IMAGE": "Upload Image",
+  "SAVE": "Save",
+  "CANCEL": "Cancel",
+  "SELECT_NEW_IMAGE": "In case you don't find the desired image, upload a new one",
+  "NO_FILE_SELECTED": "No file selected",
+  "IMAGE_UPLOADED": "Image uploaded successfully"
 }

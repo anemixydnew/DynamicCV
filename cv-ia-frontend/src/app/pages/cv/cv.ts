@@ -41,6 +41,15 @@ export class CvComponent {
   currentTheme: string = 'theme-pink';
   selectedLang: string = 'es';
   @ViewChild('cvContainer') cvContainer!: ElementRef;
+  theme = {
+    esName: '',
+    enName: '',
+    primary: '#000000',
+    secondary: '#000000',
+    image: '',
+  };
+
+  availableImages: string[] = [];
 
   constructor(public translate: TranslateService, private http: HttpClient) {
     this.selectedLang = 'es';
@@ -50,6 +59,63 @@ export class CvComponent {
     this.sortDataByDate(this.data.education, 'es', 'years');
     this.sortDataByDate(this.data.achievements, 'es', 'year');
     this.sortSkills();
+    this.loadImages();
+  }
+
+  loadImages() {
+    this.availableImages = [
+      'aqua.jpg',
+      'black.jpg',
+      'blue.jpg',
+      'brown.jpg',
+      'deeppink.jpg',
+      'gray.jpg',
+      'green.jpg',
+      'greenyellow.jpg',
+      'mistyrose.jpg',
+      'orange.jpg',
+      'pink.jpg',
+      'purple.jpg',
+      'red.jpg',
+      'royalblue.jpg',
+      'sandybrown.jpg',
+      'yellow.jpg',
+    ];
+  }
+
+  selectedFileName: string = '';
+
+  uploadImage(event: any) {
+    const file = event.target.files[0];
+
+    if (file) {
+      this.selectedFileName = this.translate.instant('IMAGE_UPLOADED');
+    } else {
+      this.selectedFileName = '';
+    }
+  }
+
+  selectImage(img: string) {
+    this.theme.image = img;
+  }
+
+  createTheme() {
+    this.http
+      .post('http://localhost:4000/create-theme', {
+        esName: this.theme.esName,
+        enName: this.theme.enName,
+        primary: this.theme.primary,
+        secondary: this.theme.secondary,
+        image: this.theme.image,
+      })
+      .subscribe({
+        next: (resp) => {
+          alert('Theme created successfully');
+        },
+        error: (err) => {
+          console.error('Error creating theme:', err);
+        },
+      });
   }
 
   jobDescription: string = '';
@@ -89,6 +155,7 @@ export class CvComponent {
   showThemeSelector = false;
   showNetworkIntelligence = false;
   dropdownOpen = false;
+  showCreateNewTheme = false;
 
   selectLang(lang: string) {
     this.selectedLang = lang;
